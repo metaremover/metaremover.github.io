@@ -1,0 +1,86 @@
+---
+import MetadataRemover from '../components/MetadataRemover.astro';
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const title = 'Remove Metadata From PNG Online | Free PNG Cleaner';
+const description =
+  'Remove metadata from PNG files online with a browser-only tool built for screenshots, exports, and web graphics.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: `${site.url}/remove-exif-from-png/`,
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    eyebrow="PNG tool page"
+    title="Remove metadata from PNG files online"
+    intro="PNG files are popular for screenshots, product graphics, UI exports, and illustrations. They usually carry less camera-style EXIF than JPG, but hidden software and export metadata can still matter."
+    links={[
+      { href: '/', label: 'Use the main remover' },
+      { href: '/what-is-exif-data/', label: 'Understand metadata' },
+      { href: '/privacy/', label: 'Read privacy policy' },
+    ]}
+  />
+
+  <section class="container section">
+    <MetadataRemover
+      title="Clean a PNG image"
+      description="Useful for screenshots, design exports, and transparent graphics before client delivery or public publishing."
+      accept="image/png"
+    />
+  </section>
+
+  <section class="container section article-grid">
+    <article class="article-panel">
+      <p class="section-label">When to use it</p>
+      <h2>PNG cleanup is useful for product and design workflows</h2>
+      <p>
+        Teams often share PNG files for mockups, user interface captures, bug reports, product listings, or
+        documentation. Depending on the export source, the file may include metadata about software, creation
+        timestamps, or other image properties you do not need in the final handoff.
+      </p>
+      <p>
+        A cleaner export keeps the image simple and reduces the chance of carrying hidden details into a
+        public or client-facing workflow.
+      </p>
+    </article>
+
+    <aside class="article-panel">
+      <p class="section-label">PNG use cases</p>
+      <ul class="check-list">
+        <li>SaaS screenshots for changelogs</li>
+        <li>Store listings and product images</li>
+        <li>Design assets exported from editing tools</li>
+        <li>Transparent graphics for websites</li>
+        <li>Documentation screenshots shared with customers</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="container section content-grid">
+    <div class="copy-panel">
+      <p class="section-label">SEO angle</p>
+      <h2>Target the PNG-specific use cases</h2>
+      <p>
+        This page works best when it speaks to people searching for "remove metadata from PNG online,"
+        especially for screenshots and design exports. That makes it different from the JPG landing page.
+      </p>
+    </div>
+    <div class="copy-panel">
+      <p class="section-label">Suggested internal links</p>
+      <ul class="check-list">
+        <li><a href="/remove-exif-from-jpg/">Remove EXIF from JPG</a></li>
+        <li><a href="/remove-exif-from-webp/">Remove metadata from WebP</a></li>
+        <li><a href="/why-remove-photo-metadata/">Why remove photo metadata?</a></li>
+        <li><a href="/faq/">Metadata remover FAQ</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

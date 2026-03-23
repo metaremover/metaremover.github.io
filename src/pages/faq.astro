@@ -1,0 +1,59 @@
+---
+import FaqList from '../components/FaqList.astro';
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, toolFaqs } from '../data/site';
+
+const title = 'Metadata Remover FAQ | Image EXIF Questions Answered';
+const description =
+  'Answers to common questions about removing image metadata, EXIF data, privacy, supported formats, and browser-only processing.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: toolFaqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+  url: `${site.url}/faq/`,
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    eyebrow="Trust page"
+    title="Metadata remover FAQ"
+    intro="This page answers the trust and workflow questions people ask before using an EXIF remover for the first time."
+    links={[
+      { href: '/', label: 'Use the remover tool' },
+      { href: '/privacy/', label: 'Read privacy policy' },
+    ]}
+  />
+
+  <section class="container section">
+    <FaqList items={toolFaqs} />
+  </section>
+
+  <section class="container section content-grid">
+    <div class="copy-panel">
+      <h2>What to add later</h2>
+      <p>
+        Once the site is live, expand this page with questions that come from Search Console queries, user
+        emails, and analytics. Real questions improve FAQ SEO more than generic filler.
+      </p>
+    </div>
+
+    <div class="copy-panel">
+      <h2>Related pages</h2>
+      <ul class="check-list">
+        <li><a href="/what-is-exif-data/">What is EXIF data?</a></li>
+        <li><a href="/how-to-remove-location-from-photos/">How to remove location from photos</a></li>
+        <li><a href="/remove-exif-from-jpg/">Remove EXIF from JPG</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

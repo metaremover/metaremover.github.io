@@ -1,0 +1,69 @@
+---
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const title = 'Why Remove Photo Metadata Before Sharing Images';
+const description =
+  'See why removing photo metadata matters for privacy, client work, public posts, and image sharing workflows.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: `${site.url}/why-remove-photo-metadata/`,
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema} type="article">
+  <PageHero
+    eyebrow="Guide"
+    title="Why remove photo metadata?"
+    intro="The answer depends on what you are sharing and who will see it. Sometimes metadata is harmless. Other times it reveals more than you intended."
+    links={[
+      { href: '/', label: 'Use the remover tool' },
+      { href: '/privacy/', label: 'Read privacy notes' },
+    ]}
+  />
+
+  <section class="container section card-grid">
+    <article class="card">
+      <h3>Privacy</h3>
+      <p>Location tags, timestamps, and device details can reveal personal information you did not mean to publish.</p>
+    </article>
+    <article class="card">
+      <h3>Professional handoff</h3>
+      <p>Client deliverables often look cleaner when they include only the image, not the shooting or editing trail.</p>
+    </article>
+    <article class="card">
+      <h3>Workflow consistency</h3>
+      <p>Teams may want standardized, simplified assets before uploading them to websites, listings, or docs.</p>
+    </article>
+  </section>
+
+  <section class="container section article-grid">
+    <article class="article-panel">
+      <h2>Metadata can expose context, not just settings</h2>
+      <p>
+        People often think metadata only includes technical camera settings. In reality, it can also show where
+        an image was captured, when it was created, what software touched it, and how a file moved through a
+        workflow. That context can be sensitive in personal, legal, marketplace, or client scenarios.
+      </p>
+      <p>
+        Cleaning the file gives you a simpler version that is easier to share without unexpected baggage.
+      </p>
+    </article>
+
+    <aside class="article-panel">
+      <p class="section-label">Good times to clean an image</p>
+      <ul class="check-list">
+        <li>Before posting travel or family photos</li>
+        <li>Before uploading product listings</li>
+        <li>Before sending screenshots to customers</li>
+        <li>Before publishing portfolio work</li>
+        <li>Before distributing press assets</li>
+      </ul>
+    </aside>
+  </section>
+</BaseLayout>

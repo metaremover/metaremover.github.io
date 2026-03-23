@@ -1,0 +1,75 @@
+---
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const title = 'What Is EXIF Data? Photo Metadata Explained';
+const description =
+  'Learn what EXIF data is, what information it can store inside image files, and why people remove it before sharing photos online.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: `${site.url}/what-is-exif-data/`,
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema} type="article">
+  <PageHero
+    eyebrow="Guide"
+    title="What is EXIF data?"
+    intro="EXIF data is the hidden information many cameras and phones attach to image files. If you have ever wondered why a photo knows when it was taken or where it was shot, EXIF is usually the reason."
+    links={[
+      { href: '/', label: 'Use the remover tool' },
+      { href: '/remove-exif-from-jpg/', label: 'Clean a JPG' },
+    ]}
+  />
+
+  <section class="container section article-grid">
+    <article class="article-panel">
+      <h2>EXIF stands for Exchangeable Image File Format</h2>
+      <p>
+        In practical terms, EXIF is a set of metadata fields stored inside many image files. Those fields can
+        describe the device used to capture the picture, the time it was taken, camera settings, orientation,
+        and sometimes the location where the photo was created.
+      </p>
+      <p>
+        This information can be useful when photographers organize a library or when editing software needs to
+        understand the original image. It can also be unnecessary or risky when the image is about to be sent
+        to a client, posted publicly, or shared on a marketplace.
+      </p>
+    </article>
+
+    <aside class="article-panel">
+      <p class="section-label">Common EXIF fields</p>
+      <ul class="check-list">
+        <li>Date and time captured</li>
+        <li>Phone or camera model</li>
+        <li>Lens and exposure settings</li>
+        <li>GPS location coordinates</li>
+        <li>Orientation and color information</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="container section content-grid">
+    <div class="copy-panel">
+      <h2>Why people remove EXIF data</h2>
+      <p>
+        Most people remove EXIF for privacy, cleaner file handoff, or consistency. For example, a real estate
+        photographer may want to remove location details before sending draft images, and a founder might want
+        to remove device information from product screenshots before a public launch.
+      </p>
+    </div>
+    <div class="copy-panel">
+      <h2>How to remove it</h2>
+      <p>
+        The simplest approach is to export a new copy of the image without the embedded metadata. That is what
+        the tool on MetaRemover is designed to do for JPG, PNG, and WebP files directly in the browser.
+      </p>
+      <p><a href="/">Try the image metadata remover.</a></p>
+    </div>
+  </section>
+</BaseLayout>

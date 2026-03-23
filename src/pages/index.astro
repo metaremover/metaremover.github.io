@@ -1,0 +1,172 @@
+---
+import FaqList from '../components/FaqList.astro';
+import MetadataRemover from '../components/MetadataRemover.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  articlePages,
+  formatPages,
+  removedMetadata,
+  sampleMetadata,
+  site,
+  toolFaqs,
+  trustPoints,
+  workflowSteps,
+} from '../data/site';
+
+const title = 'Remove Image Metadata Online | Free EXIF Remover';
+const description =
+  'Remove EXIF data and metadata from JPG, PNG, and WebP images online with a browser-only tool that keeps your files on your device.';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: site.name,
+    url: site.url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'MetaRemover Image Metadata Remover',
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript',
+    url: site.url,
+    description,
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: toolFaqs.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <section class="container hero-grid">
+    <div>
+      <p class="eyebrow">Private image cleanup</p>
+      <h1>
+        Remove image metadata
+        <span class="serif">without sending files away</span>
+      </h1>
+      <p class="display-copy">
+        Clean JPG, PNG, and WebP files in your browser before you share them publicly. MetaRemover is built
+        for people who want a faster, calmer alternative to bloated metadata sites.
+      </p>
+
+      <div class="pill-row">
+        <span class="pill">No upload to server</span>
+        <span class="pill">Works on desktop and mobile</span>
+        <span class="pill">Free for single-image cleanup</span>
+      </div>
+    </div>
+
+    <MetadataRemover
+      title="Remove EXIF data from an image"
+      description="Choose a photo or graphic and download a cleaned copy with the hidden metadata removed."
+    />
+  </section>
+
+  <section class="container section">
+    <p class="section-label">Supported formats</p>
+    <h2>Landing pages built around search intent</h2>
+    <div class="card-grid">
+      {formatPages.map((page) => (
+        <a class="card" href={page.href}>
+          <h3>{page.title}</h3>
+          <p>{page.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="section-label">How it works</p>
+    <div class="card-grid">
+      {workflowSteps.map((step) => (
+        <article class="card">
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="section-label">What changes</p>
+    <h2>Before and after metadata removal</h2>
+    <div class="sample-grid">
+      <div class="sample-box">
+        <h3>Typical hidden fields</h3>
+        <ul class="stack-list">
+          {sampleMetadata.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div class="sample-box">
+        <h3>What the cleaned copy keeps</h3>
+        <ul class="stack-list">
+          {removedMetadata.map((item) => (
+            <li>{item} removed from the exported file</li>
+          ))}
+          <li>The visible image content stays intact for sharing.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="section-label">Trust signals</p>
+    <div class="trust-grid">
+      <div class="copy-panel">
+        <h2>Privacy-first product positioning</h2>
+        <p>
+          The clearest reason to choose this site is simple: it keeps the process local. That message should
+          stay front and center across the homepage, format pages, and trust pages.
+        </p>
+      </div>
+
+      <div class="copy-panel">
+        <h2>What users care about most</h2>
+        <ul class="check-list">
+          {trustPoints.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="section-label">Support content</p>
+    <h2>Articles that bring in long-tail traffic</h2>
+    <div class="card-grid">
+      {articlePages.map((page) => (
+        <a class="card" href={page.href}>
+          <h3>{page.title}</h3>
+          <p>{page.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container section">
+    <p class="section-label">FAQ</p>
+    <h2>Common questions before someone trusts a metadata remover</h2>
+    <FaqList items={toolFaqs} />
+  </section>
+</BaseLayout>

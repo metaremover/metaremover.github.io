@@ -1,0 +1,86 @@
+---
+import MetadataRemover from '../components/MetadataRemover.astro';
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const title = 'Remove EXIF From JPG Online | Free JPG Metadata Cleaner';
+const description =
+  'Remove EXIF data from JPG and JPEG photos online using a browser-based cleaner that keeps the file on your device.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: `${site.url}/remove-exif-from-jpg/`,
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    eyebrow="JPG tool page"
+    title="Remove EXIF from JPG photos online"
+    intro="JPG files often contain the richest set of EXIF tags, including camera details, timestamps, and GPS coordinates. This page is tuned for the common search intent: clean a JPEG fast, without uploading it."
+    links={[
+      { href: '/', label: 'Use the main remover' },
+      { href: '/how-to-remove-location-from-photos/', label: 'Remove location data' },
+      { href: '/why-remove-photo-metadata/', label: 'Why remove metadata?' },
+    ]}
+  />
+
+  <section class="container section">
+    <MetadataRemover
+      title="Clean a JPG or JPEG file"
+      description="Ideal for phone photos, camera exports, and downloaded JPEGs that may contain GPS tags or camera information."
+      accept="image/jpeg"
+    />
+  </section>
+
+  <section class="container section article-grid">
+    <article class="article-panel">
+      <p class="section-label">Why this matters</p>
+      <h2>JPG images commonly carry share-sensitive details</h2>
+      <p>
+        JPEG photos are one of the most common formats for phone cameras, DSLRs, and image sharing. They can
+        store far more than pixels, including the time the photo was taken, the device model, editing
+        software, and sometimes the exact shooting location.
+      </p>
+      <p>
+        If you publish portfolio work, client proofs, marketplace photos, or personal pictures, cleaning that
+        data gives you more control over what travels with the file.
+      </p>
+    </article>
+
+    <aside class="article-panel">
+      <p class="section-label">Typical JPG metadata</p>
+      <ul class="check-list">
+        <li>Camera make and model</li>
+        <li>Exposure settings and lens info</li>
+        <li>Date taken and software tags</li>
+        <li>GPS latitude and longitude</li>
+        <li>Orientation and color profile details</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="container section content-grid">
+    <div class="copy-panel">
+      <p class="section-label">SEO angle</p>
+      <h2>How this page should rank</h2>
+      <p>
+        Keep this page focused on the phrase "remove EXIF from JPG online" and related wording like "remove
+        EXIF from JPEG" or "JPG metadata cleaner." Avoid mixing too many file types into this copy.
+      </p>
+    </div>
+    <div class="copy-panel">
+      <p class="section-label">Suggested internal links</p>
+      <ul class="check-list">
+        <li><a href="/remove-exif-from-png/">Remove metadata from PNG</a></li>
+        <li><a href="/remove-exif-from-webp/">Remove metadata from WebP</a></li>
+        <li><a href="/what-is-exif-data/">What is EXIF data?</a></li>
+        <li><a href="/faq/">Metadata remover FAQ</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

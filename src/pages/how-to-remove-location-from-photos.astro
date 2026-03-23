@@ -1,0 +1,68 @@
+---
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const title = 'How To Remove Location From Photos Before You Share Them';
+const description =
+  'Learn how to remove GPS location data from photos before posting, emailing, or sending them to clients.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: `${site.url}/how-to-remove-location-from-photos/`,
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema} type="article">
+  <PageHero
+    eyebrow="Guide"
+    title="How to remove location from photos"
+    intro="Phone photos can include exact GPS coordinates in their metadata. If you want to share the image but not the place it was taken, remove the location tags before sending the file."
+    links={[
+      { href: '/', label: 'Use the remover tool' },
+      { href: '/remove-exif-from-jpg/', label: 'Clean a JPG photo' },
+    ]}
+  />
+
+  <section class="container section card-grid">
+    <article class="card">
+      <h3>1. Choose the image</h3>
+      <p>Open the metadata remover and select the photo you want to clean.</p>
+    </article>
+    <article class="card">
+      <h3>2. Export a clean copy</h3>
+      <p>Create a fresh version of the image without the embedded EXIF location data.</p>
+    </article>
+    <article class="card">
+      <h3>3. Share the cleaned file</h3>
+      <p>Use the exported image instead of the original when posting or sending it.</p>
+    </article>
+  </section>
+
+  <section class="container section article-grid">
+    <article class="article-panel">
+      <h2>Why GPS tags matter</h2>
+      <p>
+        A single image can reveal home addresses, private event locations, client sites, or travel patterns.
+        Even if the visible photo looks harmless, the hidden coordinates may still be attached to the file.
+      </p>
+      <p>
+        That is why location cleanup is one of the strongest privacy use cases for any image metadata remover.
+      </p>
+    </article>
+
+    <aside class="article-panel">
+      <p class="section-label">Best images to check</p>
+      <ul class="check-list">
+        <li>Phone camera photos</li>
+        <li>Travel pictures posted publicly</li>
+        <li>Photos sent to buyers or clients</li>
+        <li>Images attached to social posts</li>
+        <li>Photos shared in forums or communities</li>
+      </ul>
+    </aside>
+  </section>
+</BaseLayout>

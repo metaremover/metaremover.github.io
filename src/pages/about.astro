@@ -1,0 +1,49 @@
+---
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const title = 'About MetaRemover | Private Image Metadata Removal';
+const description =
+  'Learn the product direction behind MetaRemover, an image-only metadata remover built for privacy, speed, and SEO clarity.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: title,
+  description,
+  url: `${site.url}/about/`,
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    eyebrow="Trust page"
+    title="About MetaRemover"
+    intro="MetaRemover is intentionally narrow in its first version: one clean browser-based tool for image metadata removal, supported by strong SEO pages instead of a cluttered everything-tool homepage."
+  />
+
+  <section class="container section content-grid">
+    <div class="copy-panel">
+      <h2>Why the site is image-only at launch</h2>
+      <p>
+        Static hosting on GitHub Pages is a great fit for image metadata cleanup because the work can happen in
+        the browser. That gives the project a real advantage in speed, privacy messaging, and simplicity.
+      </p>
+      <p>
+        Starting with images also makes the SEO strategy sharper. Instead of ranking vaguely for every media
+        format, the site can become genuinely helpful for photo and graphics workflows.
+      </p>
+    </div>
+
+    <div class="copy-panel">
+      <h2>Product principles</h2>
+      <ul class="check-list">
+        <li>Keep the tool above the fold.</li>
+        <li>Keep the promise clear: browser-only cleanup.</li>
+        <li>Publish helpful articles, not filler content.</li>
+        <li>Expand only after the image pages gain traction.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

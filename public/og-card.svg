@@ -1,0 +1,13 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FBF7EF"/>
+  <circle cx="970" cy="110" r="160" fill="#FFB36A"/>
+  <circle cx="1060" cy="500" r="210" fill="#12343B"/>
+  <rect x="66" y="70" width="640" height="490" rx="32" fill="#FFFDF7" stroke="#12343B" stroke-width="4"/>
+  <rect x="110" y="124" width="170" height="32" rx="16" fill="#12343B"/>
+  <rect x="110" y="190" width="552" height="170" rx="24" fill="#FBF7EF" stroke="#12343B" stroke-width="3" stroke-dasharray="10 10"/>
+  <rect x="110" y="398" width="240" height="60" rx="30" fill="#12343B"/>
+  <rect x="366" y="398" width="240" height="60" rx="30" fill="#FFB36A" stroke="#12343B" stroke-width="3"/>
+  <text x="760" y="220" fill="#12343B" font-family="Space Grotesk, Arial, sans-serif" font-size="72" font-weight="700">MetaRemover</text>
+  <text x="760" y="300" fill="#12343B" font-family="Space Grotesk, Arial, sans-serif" font-size="34">Remove image metadata in your browser.</text>
+  <text x="760" y="356" fill="#12343B" font-family="Space Grotesk, Arial, sans-serif" font-size="34">No upload. No account. No clutter.</text>
+</svg>

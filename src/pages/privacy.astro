@@ -1,0 +1,51 @@
+---
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const title = 'Privacy Policy | Browser-Only Image Metadata Removal';
+const description =
+  'Read how MetaRemover is designed to process supported images locally in the browser without routine server uploads.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: `${site.url}/privacy/`,
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    eyebrow="Trust page"
+    title="Privacy policy"
+    intro="This site is designed around browser-side image cleanup. The intent is simple: make metadata removal feel private, predictable, and easy to understand."
+  />
+
+  <section class="container section content-grid">
+    <div class="copy-panel">
+      <h2>How image processing works</h2>
+      <p>
+        The remover is built to process supported files in the browser. In normal use, your selected image does
+        not need to be uploaded to an application server to create the cleaned copy.
+      </p>
+      <p>
+        Because the site is static and intended for GitHub Pages, the product direction favors local processing
+        over server-side file handling.
+      </p>
+    </div>
+
+    <div class="copy-panel">
+      <h2>Data the site should keep minimal</h2>
+      <p>
+        The launch version should avoid collecting unnecessary user data. If you later add analytics, prefer a
+        privacy-conscious setup and disclose it clearly here.
+      </p>
+      <p>
+        If you add ads, accounts, or third-party upload services later, this page should be updated before that
+        feature goes live.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

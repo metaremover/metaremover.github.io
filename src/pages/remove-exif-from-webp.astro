@@ -1,0 +1,86 @@
+---
+import MetadataRemover from '../components/MetadataRemover.astro';
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const title = 'Remove Metadata From WebP Online | Free WebP Cleaner';
+const description =
+  'Remove metadata from WebP images online with a local browser tool made for modern web graphics and lightweight image sharing.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: `${site.url}/remove-exif-from-webp/`,
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    eyebrow="WebP tool page"
+    title="Remove metadata from WebP images online"
+    intro="WebP is common across blogs, landing pages, and compressed content workflows. This page helps you rank for users who want a modern-format metadata cleaner without leaving the browser."
+    links={[
+      { href: '/', label: 'Use the main remover' },
+      { href: '/what-is-exif-data/', label: 'Learn about EXIF' },
+      { href: '/about/', label: 'About MetaRemover' },
+    ]}
+  />
+
+  <section class="container section">
+    <MetadataRemover
+      title="Clean a WebP image"
+      description="Useful for website graphics, blog images, and exported marketing assets that should stay lightweight and private."
+      accept="image/webp"
+    />
+  </section>
+
+  <section class="container section article-grid">
+    <article class="article-panel">
+      <p class="section-label">Why this page exists</p>
+      <h2>WebP deserves its own focused landing page</h2>
+      <p>
+        Searchers who specifically mention WebP usually have a web publishing workflow in mind. They are not
+        looking for a generic, all-in-one metadata site. Give them a direct answer, a direct tool, and direct
+        proof that the process stays local.
+      </p>
+      <p>
+        That focus helps search engines understand why this page exists and helps users feel like they landed
+        on exactly the right result.
+      </p>
+    </article>
+
+    <aside class="article-panel">
+      <p class="section-label">WebP use cases</p>
+      <ul class="check-list">
+        <li>Optimized blog and CMS images</li>
+        <li>Marketing graphics exported for landing pages</li>
+        <li>Illustrations for documentation and help centers</li>
+        <li>Shared creative previews for lightweight review</li>
+        <li>Modern assets prepared for GitHub Pages sites</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="container section content-grid">
+    <div class="copy-panel">
+      <p class="section-label">SEO angle</p>
+      <h2>Position it around modern image workflows</h2>
+      <p>
+        This page should keep mentioning WebP naturally in the context of publishing, web performance, and
+        browser-only cleanup. That is how it differentiates from the JPG and PNG pages.
+      </p>
+    </div>
+    <div class="copy-panel">
+      <p class="section-label">Suggested internal links</p>
+      <ul class="check-list">
+        <li><a href="/remove-exif-from-jpg/">Remove EXIF from JPG</a></li>
+        <li><a href="/remove-exif-from-png/">Remove metadata from PNG</a></li>
+        <li><a href="/how-to-remove-location-from-photos/">How to remove location from photos</a></li>
+        <li><a href="/faq/">Metadata remover FAQ</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
