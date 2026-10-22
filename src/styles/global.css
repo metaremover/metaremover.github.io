@@ -1,14 +1,14 @@
 :root {
   --bg: #fbf7ef;
-  --surface: rgba(255, 253, 247, 0.82);
+  --surface: #fffdf7;
   --surface-solid: #fffdf7;
   --surface-strong: #12343b;
   --surface-accent: #ffb36a;
   --surface-accent-soft: #ffe2c3;
   --text: #18353c;
   --text-muted: #5a6c70;
-  --border: rgba(18, 52, 59, 0.18);
-  --shadow: 0 22px 60px rgba(18, 52, 59, 0.12);
+  --border: rgba(18, 52, 59, 0.12);
+  --shadow: 0 4px 20px rgba(18, 52, 59, 0.05), 0 1px 3px rgba(18, 52, 59, 0.03);
   --radius: 28px;
   --container: 1120px;
 }
@@ -17,10 +17,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -50,10 +46,13 @@ main {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(255, 179, 106, 0.4), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(18, 52, 59, 0.18), transparent 35%),
-    linear-gradient(180deg, rgba(255, 253, 247, 0.92), rgba(251, 247, 239, 0.96));
+    radial-gradient(circle at top left, rgba(255, 179, 106, 0.35), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(18, 52, 59, 0.12), transparent 35%),
+    linear-gradient(180deg, rgba(255, 253, 247, 0.95), rgba(251, 247, 239, 0.98));
   z-index: 0;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 .container {
@@ -65,8 +64,8 @@ main {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 1rem 0;
-  backdrop-filter: blur(18px);
+  padding: 0.75rem 0;
+  transform: translateZ(0);
 }
 
 .shell {
@@ -74,11 +73,13 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.9rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255, 253, 247, 0.72);
-  box-shadow: var(--shadow);
+  background: rgba(255, 253, 247, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(18, 52, 59, 0.08);
 }
 
 .brand {
@@ -262,7 +263,6 @@ h3 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
-  backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
 }
 
