@@ -24,7 +24,7 @@ const {
   type = 'website',
 } = Astro.props;
 
-const canonical = new URL(canonicalPath, Astro.site ?? site.url).toString();
+const canonical = new URL(canonicalPath, 'https://managemetadata.org').toString();
 const socialImage = new URL(image, Astro.site ?? site.url).toString();
 const schemaItems = Array.isArray(schema) ? schema : [schema];
 ---

@@ -3,6 +3,14 @@ import { navigation, site } from '../data/site';
 ---
 
 <header class="site-header">
+  <!-- Feeder Announcement Banner -->
+  <div class="feeder-banner">
+    <div class="container feeder-inner">
+      <span>🚀 <strong>Upgraded to ManageMetadata.org:</strong> Lossless Batch Processing, GPS Geotag Sanitizer & PDF Tools now live!</span>
+      <a href="https://managemetadata.org/" class="feeder-link" target="_blank" rel="noopener">Visit ManageMetadata.org &rarr;</a>
+    </div>
+  </div>
+
   <div class="container shell">
     <a class="brand" href="/">
       <span class="brand-mark">M</span>
@@ -19,3 +27,35 @@ import { navigation, site } from '../data/site';
     </nav>
   </div>
 </header>
+
+<style>
+  .feeder-banner {
+    background: #12343b;
+    color: #ffffff;
+    font-size: 0.88rem;
+    padding: 0.5rem 0;
+    margin-bottom: 0.75rem;
+    border-radius: 999px;
+  }
+  .feeder-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .feeder-link {
+    background: #ffb36a;
+    color: #12343b;
+    font-weight: 700;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: transform 0.15s ease;
+  }
+  .feeder-link:hover {
+    transform: translateY(-1px);
+    background: #ffa048;
+  }
+</style>
